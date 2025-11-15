@@ -17,10 +17,10 @@ export const register = async (req, res) => {
         if (password.length < 3) {
             return res.status(400).json({ message: "Password must be at least 3 characters long" })
         }
-        const salt = bcrypt.genSalt(10);
-        const hashedPassword = bcrypt.hashSync(password, salt)
+        const salt = await bcrypt.genSalt(10);
+        const hashedPassword = await bcrypt.hash(password, salt)
         const user = await userModel.create({ name, email, password: hashedPassword })
-        const token = generateToken(user?._id)
+        const token = await generateToken(user?._id)
         setCookie(res, token)
         return res.status(201).json({ message: "User created successfully", user })
     } catch (error) {
@@ -43,7 +43,7 @@ export const login = async (req, res) => {
         if (!isPasswordMatched) {
             return res.status(400).json({ message: "Invalid credentials" })
         }
-        const token = generateToken(user?._id)
+        const token = await generateToken(user?._id)
         setCookie(res, token)
         return res.status(200).json({ message: "User logged in successfully", user })
     } catch (error) {
