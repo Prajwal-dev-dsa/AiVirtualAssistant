@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { userDataContext } from "../../context/UserContext";
 
 const Register = () => {
-  const { serverUrl } = useContext(userDataContext);
+  const { serverUrl, setUserData } = useContext(userDataContext);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,12 +29,13 @@ const Register = () => {
           withCredentials: true,
         }
       );
-      console.log(res.data);
       setName("");
       setEmail("");
       setPassword("");
+      setUserData(res.data);
     } catch (error) {
       console.log(error);
+      setUserData(null);
       setError(error.response.data.message);
     } finally {
       setLoading(false);

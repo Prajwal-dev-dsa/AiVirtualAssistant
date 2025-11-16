@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { userDataContext } from "../../context/UserContext";
 
 const Login = () => {
-  const { serverUrl } = useContext(userDataContext);
+  const { serverUrl, setUserData } = useContext(userDataContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -27,11 +27,12 @@ const Login = () => {
           withCredentials: true,
         }
       );
-      console.log(res.data);
+      setUserData(res.data);
       setEmail("");
       setPassword("");
     } catch (error) {
       console.log(error);
+      setUserData(null);
       setError(error.response.data.message);
     } finally {
       setLoading(false);
