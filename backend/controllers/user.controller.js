@@ -1,6 +1,5 @@
 import uploadOnCloudinary from "../config/cloudinary.js";
-import User from "../models/user.model.js";
-
+import userModel from "../models/user.model.js";
 
 export const getCurrentUser = async (req, res) => {
     try {
@@ -23,7 +22,7 @@ export const updateAvatar = async (req, res) => {
         else {
             assistantImage = imageUrl
         }
-        const updatedUser = await User.findByIdAndUpdate(user._id, {
+        const updatedUser = await userModel.findByIdAndUpdate(user._id, {
             assistantName,
             assistantImage
         }, {

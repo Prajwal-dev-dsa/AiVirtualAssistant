@@ -21,6 +21,33 @@ function UserContext({ children }) {
     }
   };
 
+  const getGeminiResponse = async (command) => {
+    try {
+      if (!userData) {
+        console.log("User data not loaded yet.");
+        return null;
+      }
+
+      const assistantName = userData.assistantName;
+      const userName = userData.name;
+      const response = await axios.post(
+        `${serverUrl}/api/user/askAssistant`,
+        {
+          command,
+          assistantName,
+          userName,
+        },
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      console.log(`Error in getGeminiResponse: ${error.message}`);
+      return null;
+    }
+  };
+
   useEffect(() => {
     getCurrentUser();
   }, []);
@@ -32,6 +59,7 @@ function UserContext({ children }) {
     setUserData,
     backendImage,
     setBackendImage,
+    getGeminiResponse,
   };
   return (
     <userDataContext.Provider value={value}>
