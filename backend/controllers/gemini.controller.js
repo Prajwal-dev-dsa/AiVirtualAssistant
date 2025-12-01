@@ -31,8 +31,8 @@ export const askAssistant = async (req, res) => {
         {
             "type": "general" | "google_search" | "youtube_search" | "youtube_play" |
             "get_time" | "get_date" | "get_day" | "get_month" | "calculator_open" |
-            "instagram_open" | "facebook_open" | "weather-show",
-            "userInput": "<original user input>" {only remove your name from userinput if
+            "instagram_open" | "facebook_open" | "weather_show",
+            "userInput": "<original user input>" {only remove your name from user input if
             exists} and agar kisi ne google ya youtube pe kuch search karne ko bola hai to
             userInput me only bo search baala text jaye,
             "response": "<a short spoken response to read out loud to the user>"
@@ -68,14 +68,48 @@ export const askAssistant = async (req, res) => {
         - "youtube_search": if user wants to search something on YouTube.
             - "youtube_play": if user wants to directly play a video or song.
             - "calculator_open": if user wants to open a calculator.
+            - "reddit_open": if user wants to open reddit.
+            - "amazon_open": if user wants to open amazon.
+            - "cricbuzz_open": if user wants to know anything about cricket.
+            - "flipkart_open": if user wants to open flipkart.
+            - "netflix_open": if user wants to open netflix.
+            - "jiostar_open" : if user wants to open jiostar or hotstar.
+            - "spotify_open": if user wants to open spotify.
+            - "amazon_music_open": if user wants to open amazon music.
+            - "amazon_prime_video_open": if user wants to open amazon prime video.
+            - "stackoverflow_open": if user wants to open stack overflow.
+            - "hackerearth_open": if user wants to open hackerearth.
             - "github_open": if user wants to open github.
+            - "linkedin_open": if user wants to open linkedin.
+            - "twitter_open": if user wants to open twitter.
+            - "whatsapp_open": if user wants to open whatsapp.
+            - "telegram_open": if user wants to open telegram.
+            - "chatgpt_open": if user wants to open chatgpt.
+            - "gmail_open": if user wants to open gmail.
+            - "outlook_open": if user wants to open outlook.
+            - "teams_open": if user wants to open teams.
+            - "zoom_open": if user wants to open zoom.
+            - "slack_open": if user wants to open slack.
+            - "discord_open": if user wants to open discord.
+            - "gemini_open": if user wants to open gemini.
+            - "perplexity_open": if user wants to open perplexity.
+            - "anthropic_open": if user wants to open anthropic.
+            - "openai_open": if user wants to open openai.
+            - "google_open": if user wants to open google.
+            - "leetcode_open":if user wants to open leetcode.
+            - "codeforces_open":if user wants to open codeforces.
+            - "hackerrank_open":if user wants to open hackerrank.
+            - "codechef_open":if user wants to open codechef.
+            - "geeksforgeeks_open":if user wants to open geeksforgeeks.
+            - "mongodb_open": if user wants to open mongodb.
             - "instagram_open": if user wants to open instagram.
             - "facebook_open": if user wants to open facebook.
-            - "weather-show": if user wants to know weather
+            - "weather_show": if user wants to know weather
             - "get_time": if user asks for current time.
             - "get_date": if user asks for today's date.
             - "get_day": if user asks what day it is.
             - "get_month": if user asks for the current month.
+            - "get_year": if user asks for the current year.
             - "general": if it's a factual or informational question, or a simple greeting, and if user asks for time, date, day, month, or weather or any question which is not related to above types and if you know the answer then keep that also under the "general" category and straighaway explain the answer rather than saying "let me find for you". Give the answer directly and should not be too long.
 
         Important:
