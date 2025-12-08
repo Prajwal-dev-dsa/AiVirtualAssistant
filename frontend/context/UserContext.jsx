@@ -5,7 +5,7 @@ import axios from "axios";
 export const userDataContext = createContext();
 
 function UserContext({ children }) {
-  const serverUrl = "http://localhost:8000";
+  const serverUrl = "https://ai-virtual-assistant-mern-backend.onrender.com";
   const [userData, setUserData] = useState(null);
   const [backendImage, setBackendImage] = useState(null);
 
