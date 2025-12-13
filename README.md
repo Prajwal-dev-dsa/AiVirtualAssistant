@@ -102,7 +102,7 @@ MongoDB (Local or Atlas)
 Installation
 ```Clone the Repository
 git clone https://github.com/Prajwal-dev-dsa/AI_VIRTUAL_ASSISTANT_MERN.git
-cd YOUR_REPOSITORY_NAME
+cd AI_VIRTUAL_ASSISTANT_MERN
 ```
 
 Backend Setup
