@@ -73,6 +73,9 @@ const Home = () => {
     } else if (type === "instagram_open") {
       window.open("https://www.instagram.com", "_blank");
     } else if (type === "whatsapp_open") {
+    } else if (type === "youtube_open") {
+      window.open("https://www.youtube.com", "_blank");
+    } else if (type === "whatsapp_open") {
       window.open("https://www.whatsapp.com", "_blank");
     } else if (type === "github_open") {
       window.open("https://www.github.com", "_blank");

@@ -68,6 +68,7 @@ export const askAssistant = async (req, res) => {
         - "youtube_search": if user wants to search something on YouTube.
             - "youtube_play": if user wants to directly play a video or song.
             - "calculator_open": if user wants to open a calculator.
+            - "youtube_open": if user wants to open youtube.
             - "reddit_open": if user wants to open reddit.
             - "amazon_open": if user wants to open amazon.
             - "cricbuzz_open": if user wants to know anything about cricket.
