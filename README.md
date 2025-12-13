@@ -101,7 +101,7 @@ MongoDB (Local or Atlas)
 
 Installation
 ```Clone the Repository
-git clone [https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git](https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git)
+git clone https://github.com/Prajwal-dev-dsa/AI_VIRTUAL_ASSISTANT_MERN.git
 cd YOUR_REPOSITORY_NAME
 ```
 
